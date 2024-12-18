@@ -7,6 +7,8 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 import { UrlShortenerModule } from './url-shortener/url-shortener.module';
 import { ThrottlerModule } from '@nestjs/throttler';
 import * as Joi from 'joi';
+import { AuthModule } from './auth/auth.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -49,6 +51,8 @@ import * as Joi from 'joi';
       }),
     }),
     UrlShortenerModule,
+    AuthModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
